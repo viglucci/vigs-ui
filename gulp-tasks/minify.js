@@ -1,6 +1,6 @@
 module.exports = function (gulp, plugins) {
 	return function () {
-		gulp.src('dist/*.css')
+		return gulp.src('dist/*.css')
 			.pipe(plugins.minifyCss())
 			.pipe(plugins.rename({
 				suffix: '.min'
