@@ -2,14 +2,20 @@
   "name": "vigs-ui",
   "version": "0.0.1",
   "description": "A ui theme and components for bootstrap3",
-  "main": "index.js",
+  "main": "styleguide.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp styleguide-start",
     "clean": "gulp clean",
+    "clean-build": "gulp clean-build",
     "build": "gulp build"
   },
-  "author": "kevin viglucci <kviglucci@gmail.com>",
+  "author": "Kevin Viglucci <kviglucci@gmail.com> (https://github.com/viglucci)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/viglucci/vigs-ui/issues"
+  },
+  "homepage": "https://github.com/viglucci/vigs-ui",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "3.3.5",
