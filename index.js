@@ -1,7 +1,10 @@
+var path 	= require('path');
 var express = require('express');
-var app = express();
+var app 	= express();
 
-app.use(express.static(__dirname + '/dist'));
+app.use('/images',express.static(path.join(__dirname, 'dist/images')));
+app.use('/js',express.static(path.join(__dirname, 'dist/js')));
+app.use('/css',express.static(path.join(__dirname, 'dist/css')));
 
 app.get('/',function(req,res){
 	res.sendFile(path.join(__dirname, 'dist/styleguide.html'));

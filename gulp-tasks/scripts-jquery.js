@@ -3,6 +3,6 @@ module.exports = function (gulp, plugins) {
 		return gulp.src('node_modules/jquery/dist/jquery.js')
 			.pipe(plugins.concat('jquery.js'))
 			//.pipe(plugins.uglify())
-			.pipe(gulp.dest('dist'));
+			.pipe(gulp.dest('dist/js'));
 	};
 };
