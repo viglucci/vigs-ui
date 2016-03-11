@@ -12,9 +12,9 @@ module.exports = function (gulp, plugins) {
 	gulp.task('html', require('./html')(gulp, plugins));
 	gulp.task('minify', require('./minify')(gulp, plugins));
 
-	gulp.task('bootstrap-move-less', require('./bootstrap-move-less')(gulp, plugins));
-	gulp.task('bootstrap-move-variables', ['bootstrap-move-less'], require('./bootstrap-move-variables')(gulp, plugins));
-	gulp.task('bootstrap-staging', ['bootstrap-move-less', 'bootstrap-move-variables']);
+	gulp.task('bootstrap-stage-less', require('./bootstrap-stage-less')(gulp, plugins));
+	gulp.task('bootstrap-stage-custom', ['bootstrap-stage-less'], require('./bootstrap-stage-custom')(gulp, plugins));
+	gulp.task('bootstrap-staging', ['bootstrap-stage-less', 'bootstrap-stage-custom']);
 
 	gulp.task('styles', ['bootstrap-staging', 'less', 'css-styleguide']);
 	gulp.task('scripts', ['scripts-jquery', 'scripts-bootstrap', 'scripts-styleguide']);
@@ -26,6 +26,7 @@ module.exports = function (gulp, plugins) {
 			'scripts',
 			'minify',
 			'html',
-			'clean-build', cb);
+			//'clean-build', 
+			cb);
 	});
 };
