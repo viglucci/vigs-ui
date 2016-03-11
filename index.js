@@ -3,6 +3,6 @@ module.exports = {
 		"build": require('./gulp-tasks/build')(gulp, plugins),
 		"clean": require('./gulp-tasks/clean')(gulp, plugins),
 		"clean-build": require('./gulp-tasks/clean-build')(gulp, plugins),
-		"styleguide-start": require('./gulp-tasks/styleguide-start')(gulp, plugins),
+		"styleguide-start": require('./gulp-tasks/styleguide')(gulp, plugins),
 	}
 }
