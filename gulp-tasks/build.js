@@ -26,7 +26,7 @@ module.exports = function (gulp, plugins) {
 			'scripts',
 			'minify',
 			'html',
-			//'clean-build', 
+			'clean-build', 
 			cb);
 	});
 };
