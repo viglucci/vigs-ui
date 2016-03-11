@@ -1,3 +1,6 @@
+var gulp 		= require('gulp');
+var plugins 	= require('gulp-load-plugins')();
+
 module.exports = {
 	"tasks": {
 		"build": require('./gulp-tasks/build')(gulp, plugins),
