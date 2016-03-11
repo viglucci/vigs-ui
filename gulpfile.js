@@ -10,3 +10,5 @@ gulp.task('default', ['build'], function () {
 //    gulp.watch('src/js/**/*.js', ['scripts']);
 //    gulp.watch('src/sass/**/*.{sass,scss}', ['sass']);
 });
+
+module.exports = gulp;

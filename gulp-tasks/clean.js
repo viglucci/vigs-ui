@@ -1,5 +1,9 @@
 module.exports = function (gulp, plugins) {
 	return function () {
-		return gulp.src(['dist', 'build'], {read: false}).pipe(plugins.clean());
+		return gulp.src([
+			__dirname + '\\..\\dist\\', 
+			__dirname + '\\..\\build\\'
+		],{read: false})
+		.pipe(plugins.clean({force: true}));
 	};
 };

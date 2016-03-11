@@ -1,9 +1,9 @@
 module.exports = function (gulp, plugins) {
 	return function () {
 		return gulp.src([
-			'src/less/variables.less',
-			'src/less/dropdowns.less'
+			__dirname + '\\..\\src\\less\\variables.less',
+			__dirname + '\\..\\src\\less\\dropdowns.less'
 		])
-		.pipe(gulp.dest('build/bootstrap/less'));
+		.pipe(gulp.dest(__dirname + '\\..\\build\\bootstrap\\less'));
 	};
 };
