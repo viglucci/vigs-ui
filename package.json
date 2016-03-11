@@ -12,7 +12,7 @@
   "author": "kevin viglucci <kviglucci@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^3.3.6",
+    "bootstrap": "3.3.5",
     "express": "^4.13.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",

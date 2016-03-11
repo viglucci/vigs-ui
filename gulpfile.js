@@ -4,7 +4,8 @@ var runSequence = require('run-sequence');
 var child       = require('child_process');
 
 gulp.task('clean', require('./gulp-tasks/clean')(gulp, plugins));
-gulp.task('less', require('./gulp-tasks/less')(gulp, plugins));
+gulp.task('clean-build', require('./gulp-tasks/clean-build')(gulp, plugins));
+gulp.task('less', ['bootstrap-staging'], require('./gulp-tasks/less')(gulp, plugins));
 gulp.task('css-styleguide', require('./gulp-tasks/css-styleguide')(gulp, plugins));
 gulp.task('scripts-bootstrap', require('./gulp-tasks/scripts-bootstrap')(gulp, plugins));
 gulp.task('scripts-jquery', require('./gulp-tasks/scripts-jquery')(gulp, plugins));
@@ -12,7 +13,12 @@ gulp.task('scripts-styleguide', require('./gulp-tasks/scripts-styleguide')(gulp,
 gulp.task('html', require('./gulp-tasks/html')(gulp, plugins));
 gulp.task('minify', require('./gulp-tasks/minify')(gulp, plugins));
 
-gulp.task('styles', ['less', 'css-styleguide']);
+
+gulp.task('bootstrap-move-less', require('./gulp-tasks/bootstrap-move-less')(gulp, plugins));
+gulp.task('bootstrap-move-variables', ['bootstrap-move-less'], require('./gulp-tasks/bootstrap-move-variables')(gulp, plugins));
+gulp.task('bootstrap-staging', ['bootstrap-move-less', 'bootstrap-move-variables']);
+
+gulp.task('styles', ['bootstrap-staging', 'less', 'css-styleguide']);
 gulp.task('scripts', ['scripts-jquery', 'scripts-bootstrap', 'scripts-styleguide']);
 
 //gulp.task('build', ['clean', 'less', 'scripts', 'minify', 'html']);
@@ -23,7 +29,8 @@ gulp.task('build', function(cb){
 		'styles',
 		'scripts',
 		'minify',
-		'html', cb);
+		'html',
+		'clean-build', cb);
 });
 
 // start the server - log & pipe output to the console

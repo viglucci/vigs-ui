@@ -10,7 +10,7 @@ app.get('/',function(req,res){
 	res.sendFile(path.join(__dirname, 'dist/styleguide.html'));
 });
 
-var express_port = 16005;
+var express_port = 17005;
 app.listen(express_port, function () {
 	console.log('vigs-ui styleguide listening on %s', express_port);
 });
